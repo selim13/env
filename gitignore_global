@@ -1,0 +1,50 @@
+### Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+### Eclipse
+*.pydevproject
+.project
+.metadata
+#bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+### IntelliJ idea (PhpStorm, RubyMine, PyCharm, etc...)
+*.iml
+*.ipr
+*.iws
+.idea/
+
+### SASS Ignores - "Sassy CSS" http://sass-lang.com/
+*.sass-cache

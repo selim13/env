@@ -1,0 +1,7 @@
+[user]
+	user = Dmitry Seleznyov
+	email = selim013@gmail.com
+[push]
+	default = simple
+[core]
+	excludesfile = ~/dev/env/gitignore_global

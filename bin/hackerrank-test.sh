@@ -39,7 +39,7 @@ for IFILE in $TESTDIR/input*; do
         if [ "$CMDOUT" == "$EXPOUT" ]; then
             RESULT="PASS"
         else
-            RESULT="FAIL"
+            RESULT="FAIL"            
         fi
     else
         RESULT="NO ANSWER"
@@ -47,8 +47,14 @@ for IFILE in $TESTDIR/input*; do
 
     printf "$FORMAT" "$NAME" "$RESULT" "$TIME"
     if [ "$RESULT" == "FAIL" ]; then
-        echo "Result: $CMDOUT"
-        echo "Expected: $EXPOUT"
+        echo Result: 
+        echo "$CMDOUT"
+        echo
+        echo Expected: 
+        echo "$EXPOUT"
+        echo
+        echo Diff:
+        echo "$CMDOUT" | diff $OFILE -
         echo
     fi
 done

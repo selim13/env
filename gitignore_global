@@ -48,3 +48,6 @@ local.properties
 
 ### SASS Ignores - "Sassy CSS" http://sass-lang.com/
 *.sass-cache
+
+### Visual studio code
+.vscode

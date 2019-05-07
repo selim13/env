@@ -74,6 +74,9 @@ alias wttr="curl wttr.in"
 alias emacs="emacs -nw"
 alias emacsx="emacs24-x"
 
+# Yarn
+PATH="$HOME/.yarn/bin:$PATH"
+
 # Snap
 PATH="/snap/bin:$PATH"
 
@@ -83,11 +86,11 @@ export GOROOT=~/opt/golang1.8
 PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # Rust
-PATH="~/.cargo/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 
 # Ruby
 export GEM_HOME=$HOME/.gem
-PATH=$PATH:$HOME/.gem/bin
+PATH="$HOME/.gem/bin:$PATH"
 
 # X
 export XDG_CURRENT_DESKTOP="gnome"

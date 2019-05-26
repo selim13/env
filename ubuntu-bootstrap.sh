@@ -34,7 +34,10 @@ sudo apt install -y \
 # tg https://telegram.org/dl/desktop/linux
 # eagle https://www.autodesk.com/products/eagle/free-download
 
+mkdir -p ~/bin
 usermod -s /usr/bin/zsh selim13
+
+curl -o ~/bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr && chmod +x ~/bin/tldr
 
 [ ! -d ~/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 [ ! -d ~/.zgen ] && git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"

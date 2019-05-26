@@ -20,14 +20,15 @@ sudo apt install -y \
     tree \
     mysql-client
 
-# Install gui stuff
+# Install other not essential stuff
 sudo apt install -y \
+    hibernate \
     redshift-gtk \
     fonts-firacode \
     mplayer \
     ffmpeg \
     inkscape \
-    gimp
+    gimp 
 
 # vscode
 # jetbrains toolbox/phpstorm

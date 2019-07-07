@@ -96,6 +96,9 @@ PATH="$HOME/.gem/bin:$PATH"
 export XDG_CURRENT_DESKTOP="gnome"
 export GTK_IM_MODULE=xim # fixes ctrl-shift-e in vscode
 
+# ARM dev
+PATH="$HOME/opt/gcc-arm-none-eabi-8-2018-q4-major/bin:$PATH"
+
 # added by travis gem
 [ -f /home/selim13/.travis/travis.sh ] && source /home/selim13/.travis/travis.sh
 

@@ -8,6 +8,13 @@
     '~/.config/konsolerc': konsole/konsolerc
     '~/.local/share/konsole/selim.profile': konsole/selim.profile
     '~/.local/share/konsole/selim.colorscheme': konsole/selim.colorscheme
+    '~/.tmux.conf': .tmux.conf
+    '~/.gitconfig': .gitconfig
+    '~/.gitignore': .gitignore
+    '~/.zshrc': .zshrc
+    '~/.conky': .conky
+    '~/.conkyrc': .conkyrc
+    '~/.config/redshift.conf': .config/redshift.conf
 
 
 #- shell:

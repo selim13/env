@@ -17,8 +17,6 @@ tramp
 .project
 .metadata
 #bin/**
-tmp/**
-tmp/**/*
 *.tmp
 *.bak
 *.swp

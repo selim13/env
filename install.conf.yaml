@@ -15,6 +15,7 @@
     '~/.conky': .conky
     '~/.conkyrc': .conkyrc
     '~/.config/redshift.conf': .config/redshift.conf
+    '~/.lando/config.yml': .lando/config.yml
 
 
 #- shell:

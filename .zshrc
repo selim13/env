@@ -3,7 +3,6 @@
 # Oh My Zsh
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-export NVM_LAZY_LOAD=true
 export FZF_TMUX=1
 
 source $ZSH/oh-my-zsh.sh
@@ -26,7 +25,6 @@ if ! zgen saved; then
 
 	zgen load zsh-users/zsh-autosuggestions
 	zgen load andrewferrier/fzf-z
-	zgen load lukechilds/zsh-nvm
 
 	zgen save
 fi
@@ -107,3 +105,7 @@ PATH=~/opt/watchman/linux/bin:$PATH
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

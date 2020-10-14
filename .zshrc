@@ -88,10 +88,6 @@ PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 # Rust
 PATH="$HOME/.cargo/bin:$PATH"
 
-# Ruby
-export GEM_HOME=$HOME/.gem
-PATH="$HOME/.gem/bin:$PATH"
-
 # X
 export XDG_CURRENT_DESKTOP="gnome"
 export GTK_IM_MODULE=xim # fixes ctrl-shift-e in vscode
@@ -102,4 +98,5 @@ PATH="$HOME/opt/gcc-arm-none-eabi-8-2018-q4-major/bin:$PATH"
 # added by travis gem
 [ -f /home/selim13/.travis/travis.sh ] && source /home/selim13/.travis/travis.sh
 
-# time
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

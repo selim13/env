@@ -98,5 +98,12 @@ PATH="$HOME/opt/gcc-arm-none-eabi-8-2018-q4-major/bin:$PATH"
 # added by travis gem
 [ -f /home/selim13/.travis/travis.sh ] && source /home/selim13/.travis/travis.sh
 
+# android
+export ANDROID_HOME=~/opt/android
+PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
+
+# react native
+PATH=~/opt/watchman/linux/bin:$PATH
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

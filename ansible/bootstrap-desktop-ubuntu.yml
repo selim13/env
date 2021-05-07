@@ -1,0 +1,115 @@
+---
+- name: Bootstrap desktop ubuntu
+  hosts: 127.0.0.1
+  connection: local
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Add packages.selim13.ru repo
+      apt_key:
+        id: C0888305
+        url: https://packages.selim13.ru/debian/repo.gpg.key
+    - apt_repository:
+        repo: deb https://packages.selim13.ru/debian/ sid main
+        update_cache: no
+
+    - name: Add k6 repo
+      apt_key:
+        keyserver: hkp://keyserver.ubuntu.com:80
+        id: C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+    - apt_repository:
+        repo: deb https://dl.k6.io/deb stable main
+        update_cache: no
+
+    - name: Add yarn repo
+      apt_key:
+        url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    - apt_repository:
+        repo: deb https://dl.yarnpkg.com/debian/ stable main
+        update_cache: no
+
+    - name: Add docker repo
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+    - apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+        update_cache: no
+
+    - name: Install essential packages
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+        pkg:
+          - apt-transport-https
+          - build-essential
+          - vim
+          - htop
+          - tmux
+          - iotop
+          - git
+          - wget
+          - curl
+          - zsh
+          - tree
+          - ca-certificates
+          - gnupg
+          - gnupg2
+          - lsb-release
+
+    - name: Install custom packages
+      apt:
+        update_cache: no
+        pkg:
+          - exa
+          - fd
+          - fnm
+          - gping
+          - lando
+          - lf
+          - oha
+          - psysh
+          - ripgrep
+          - spotify-adblock
+          - starship
+          - vidir
+          - wp-cli
+
+    - name: Install other packages
+      apt:
+        update_cache: no
+        pkg:
+          - k6
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - hibernate
+          - redshift-gtk
+          - fonts-firacode
+          - mplayer
+          - ffmpeg
+          - inkscape
+          - gimp
+          - xwallpaper
+          - yarn
+          - mysql-client
+
+    - name: Add docker group
+      group:
+        name: docker
+
+    - name: Add user to docker group
+      user:
+        name: selim13
+        groups: docker
+        append: true
+
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+
+    - name: Install docker-compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: "u+x,g+x"

@@ -3,9 +3,12 @@
 # Oh My Zsh
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
+DISABLE_MAGIC_FUNCTIONS=true
 export FZF_TMUX=1
 
 source $ZSH/oh-my-zsh.sh
+
+. "/home/selim13/.local/share/lscolors.sh"
 
 # User configuration
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
@@ -13,14 +16,9 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # zgen
 source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved; then
-	# zgen oh-my-zsh
 	zgen oh-my-zsh plugins/fzf
-	zgen oh-my-zsh plugins/git
-	zgen oh-my-zsh plugins/npm
 	zgen oh-my-zsh plugins/zsh_reload
 	zgen oh-my-zsh plugins/ssh-agent
-	zgen oh-my-zsh plugins/docker
-	zgen oh-my-zsh plugins/docker-compose
 	zgen oh-my-zsh plugins/z
 
 	zgen load zsh-users/zsh-autosuggestions
@@ -80,8 +78,7 @@ PATH="/snap/bin:$PATH"
 
 # Go
 export GOPATH=~/go
-export GOROOT=~/opt/golang1.8
-PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+PATH=~/opt/go/bin:$GOPATH/bin:$PATH
 
 # Rust
 PATH="$HOME/.cargo/bin:$PATH"
@@ -93,9 +90,6 @@ export GTK_IM_MODULE=xim # fixes ctrl-shift-e in vscode
 # ARM dev
 PATH="$HOME/opt/gcc-arm-none-eabi-8-2018-q4-major/bin:$PATH"
 
-# added by travis gem
-[ -f /home/selim13/.travis/travis.sh ] && source /home/selim13/.travis/travis.sh
-
 # android
 export ANDROID_HOME=~/opt/android
 PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
@@ -106,6 +100,11 @@ PATH=~/opt/watchman/linux/bin:$PATH
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# fnm
+export PATH=/home/selim13/.fnm:$PATH
+eval "`fnm env --use-on-cd`"
+
+export DENO_INSTALL="/home/selim13/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+eval "$(starship init zsh)"

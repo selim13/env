@@ -2,21 +2,20 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
-    '~/.config/konsolerc': konsole/konsolerc
-    '~/.local/share/konsole/selim.profile': konsole/selim.profile
-    '~/.local/share/konsole/selim.colorscheme': konsole/selim.colorscheme
-    '~/.tmux.conf': .tmux.conf
-    '~/.gitconfig': .gitconfig
-    '~/.gitignore': .gitignore
-    '~/.zshrc': .zshrc
-    '~/.conky': .conky
-    '~/.conkyrc': .conkyrc
-    '~/.config/redshift.conf': .config/redshift.conf
-    '~/.lando/config.yml': .lando/config.yml
-
-
+    "~/.config/konsolerc": konsole/konsolerc
+    "~/.local/share/lscolors.sh": .local/share/lscolors.sh
+    "~/.local/share/konsole/selim.profile": konsole/selim.profile
+    "~/.local/share/konsole/selim.colorscheme": konsole/selim.colorscheme
+    "~/.tmux.conf": .tmux.conf
+    "~/.gitconfig": .gitconfig
+    "~/.gitignore": .gitignore
+    "~/.zshrc": .zshrc
+    "~/.conky": .conky
+    "~/.conkyrc": .conkyrc
+    "~/.config/redshift.conf": .config/redshift.conf
+    "~/.lando/config.yml": .lando/config.yml
 #- shell:
 #  - [git submodule update --init --recursive, Installing submodules]

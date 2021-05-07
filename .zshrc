@@ -8,7 +8,7 @@ export FZF_TMUX=1
 
 source $ZSH/oh-my-zsh.sh
 
-. "/home/selim13/.local/share/lscolors.sh"
+. "$HOME/.local/share/lscolors.sh"
 
 # User configuration
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"

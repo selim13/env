@@ -4,18 +4,29 @@
 
 - clean: ["~"]
 
+- create:
+   - ~/.local/share
+   - ~/.local/bin
+   - ~/.config
+   - ~/.config/tmux
+   - ~/.config/git
+   - ~/.config/shell
+   - ~/.config/zsh
+
 - link:
+    ~/.zshenv: .config/zsh/.zshenv
+    ~/.config/zsh/.zshrc: .config/zsh/.zshrc
     "~/.config/konsolerc": konsole/konsolerc
     "~/.local/share/lscolors.sh": .local/share/lscolors.sh
     "~/.local/share/konsole/selim.profile": konsole/selim.profile
     "~/.local/share/konsole/selim.colorscheme": konsole/selim.colorscheme
-    "~/.tmux.conf": .tmux.conf
-    "~/.gitconfig": .gitconfig
-    "~/.gitignore": .gitignore
-    "~/.zshrc": .zshrc
+    "~/.config/tmux/tmux.conf": .config/tmux/tmux.conf
+    "~/.config/git/config": .config/git/config
+    "~/.config/git/ignore": .config/git/ignore
     "~/.conky": .conky
     "~/.conkyrc": .conkyrc
     "~/.config/redshift.conf": .config/redshift.conf
     "~/.lando/config.yml": .lando/config.yml
-#- shell:
-#  - [git submodule update --init --recursive, Installing submodules]
+
+- shell:
+  - []

@@ -8,10 +8,7 @@ export FZF_TMUX=1
 
 source $ZSH/oh-my-zsh.sh
 
-. "$HOME/.local/share/lscolors.sh"
-
-# User configuration
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+. "$XDG_DATA_HOME/lscolors.sh"
 
 # zgen
 source "${HOME}/.zgen/zgen.zsh"
@@ -26,9 +23,6 @@ if ! zgen saved; then
 
 	zgen save
 fi
-
-# Zsh
-#unsetopt auto_cd
 
 # Key bindings
 bindkey "\e[1~" beginning-of-line
@@ -70,41 +64,5 @@ alias wttr="curl wttr.in"
 alias emacs="emacs -nw"
 alias emacsx="emacs24-x"
 
-# Yarn
-PATH="$HOME/.yarn/bin:$PATH"
-
-# Snap
-PATH="/snap/bin:$PATH"
-
-# Go
-export GOPATH=~/go
-PATH=~/opt/go/bin:$GOPATH/bin:$PATH
-
-# Rust
-PATH="$HOME/.cargo/bin:$PATH"
-
-# X
-export XDG_CURRENT_DESKTOP="gnome"
-export GTK_IM_MODULE=xim # fixes ctrl-shift-e in vscode
-
-# ARM dev
-PATH="$HOME/opt/gcc-arm-none-eabi-8-2018-q4-major/bin:$PATH"
-
-# android
-export ANDROID_HOME=~/opt/android
-PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
-
-# react native
-PATH=~/opt/watchman/linux/bin:$PATH
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# fnm
-export PATH=/home/selim13/.fnm:$PATH
 eval "`fnm env --use-on-cd`"
-
-export DENO_INSTALL="/home/selim13/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
 eval "$(starship init zsh)"

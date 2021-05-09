@@ -80,6 +80,7 @@
       apt:
         update_cache: no
         pkg:
+          - fzf
           - k6
           - docker-ce
           - docker-ce-cli

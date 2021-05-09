@@ -9,10 +9,13 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export EDITOR="vim"
 export TERMINAL="gnome-terminal"
 export BROWSER="firefox"
+export PAGER="less"
+
+# Shell
+export HISTFILE="$XDG_DATA_HOME/history" # sh history
 
 # Zsh
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export HISTFILE="$XDG_DATA_HOME/history"
 export _Z_DATA="$XDG_DATA_HOME/z"
 export ZGEN_DIR="$XDG_DATA_HOME/zgen"
 

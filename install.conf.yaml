@@ -2,7 +2,7 @@
     link:
       relink: true
 
-- clean: ["~"]
+- clean: ["~", "~/.config"]
 
 - create:
    - ~/.local/share
@@ -12,10 +12,12 @@
    - ~/.config/git
    - ~/.config/shell
    - ~/.config/zsh
+   - ~/.config/wget
 
 - link:
     ~/.zshenv: .config/zsh/.zshenv
     ~/.config/zsh/.zshrc: .config/zsh/.zshrc
+    ~/.config/wget/wgetrc: .config/wget/wgetrc
     "~/.config/konsolerc": konsole/konsolerc
     "~/.local/share/lscolors.sh": .local/share/lscolors.sh
     "~/.local/share/konsole/selim.profile": konsole/selim.profile
@@ -29,4 +31,4 @@
     "~/.lando/config.yml": .lando/config.yml
 
 - shell:
-  - []
+  - sh -c '[ -d "$XDG_DATA_HOME/zgen" ] || git clone https://github.com/tarjoilija/zgen.git "$XDG_DATA_HOME/zgen"'

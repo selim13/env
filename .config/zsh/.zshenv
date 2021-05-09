@@ -14,6 +14,7 @@ export BROWSER="firefox"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_DATA_HOME/history"
 export _Z_DATA="$XDG_DATA_HOME/z"
+export ZGEN_DIR="$XDG_DATA_HOME/zgen"
 
 # X
 export XDG_CURRENT_DESKTOP="gnome"
@@ -26,11 +27,12 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 
 # Go
-export GOPATH="$HOME/go"
+export GOPATH="$XDG_DATA_HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export PATH="$CARGO_HOME/.cargo/bin:$PATH"
 
 # RVM
 export PATH="$HOME/.rvm/bin:$PATH"
@@ -42,3 +44,8 @@ export PATH="$HOME/.fnm:$PATH"
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# Other
+export LESSHISTFILE="-"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"

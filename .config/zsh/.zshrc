@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 . "$XDG_DATA_HOME/lscolors.sh"
 
 # zgen
-source "${HOME}/.zgen/zgen.zsh"
+source "$XDG_DATA_HOME/zgen/zgen.zsh"
 if ! zgen saved; then
 	zgen oh-my-zsh plugins/fzf
 	zgen oh-my-zsh plugins/zsh_reload

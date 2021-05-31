@@ -75,8 +75,16 @@ fi
 
 # [Ctrl-Delete] - delete whole forward-word
 bindkey '^[[3;5~' kill-word
-# [Ctrl-Backspace] - delete whole backward-word
-bindkey "^H" backward-kill-word
+
+# [Ctrl-Backspace] - delete whole backward-word with stops
+# at non-alphanumeric characters
+backward-kill-dir() {
+	local WORDCHARS=${WORDCHARS/\/}
+	zle backward-kill-word
+}
+zle -N backward-kill-dir
+bindkey '^H' backward-kill-dir
+
 # [Space] - don't do history expansion
 bindkey ' ' magic-space
 

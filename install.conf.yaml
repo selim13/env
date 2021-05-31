@@ -25,7 +25,8 @@
     "~/.local/share/lscolors.sh": .local/share/lscolors.sh
     "~/.local/share/konsole/selim.profile": konsole/selim.profile
     "~/.local/share/konsole/selim.colorscheme": konsole/selim.colorscheme
-    "~/.config/tmux/tmux.conf": .config/tmux/tmux.conf
+    ~/.tmux.conf: .config/tmux/tmux.conf
+    ~/.config/tmux/tmux.conf: .config/tmux/tmux.conf
     "~/.config/git/config": .config/git/config
     "~/.config/git/ignore": .config/git/ignore
     "~/.conky": .conky

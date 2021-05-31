@@ -19,6 +19,7 @@
     ~/.zshenv: .config/zsh/.zshenv
     ~/.config/zsh/.zshrc: .config/zsh/.zshrc
     ~/.config/zsh/aliases.zsh: .config/zsh/aliases.zsh
+    ~/.config/zsh/bindings.zsh: .config/zsh/bindings.zsh
     ~/.config/wget/wgetrc: .config/wget/wgetrc
     "~/.config/konsolerc": konsole/konsolerc
     "~/.local/share/lscolors.sh": .local/share/lscolors.sh

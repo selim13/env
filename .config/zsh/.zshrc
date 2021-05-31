@@ -28,10 +28,17 @@ HISTFILE=$XDG_CACHE_HOME/zsh/history
 HISTSIZE=50000
 # max number of entries in the HISTFILE
 SAVEHIST=1000000
+# record timestamps in the history
+setopt extended_history
+# delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_expire_dups_first
 # ignore duplicated history items
 setopt hist_ignore_dups
 # ignore commands that start with space
 setopt hist_ignore_space
+# don't run commands with history expansions immediately, instead allow the
+# user to preview the expansions and edit the command after expansions in ZLE
+setopt hist_verify
 # immediately write HISTFILE to disk when a new command is appended
 setopt inc_append_history
 # synchronize history between active sessions
@@ -63,6 +70,11 @@ _comp_options+=(globdots)
 
 # load additional configs
 [ -f "$ZDOTDIR/aliases.zsh" ] && source "$ZDOTDIR/aliases.zsh"
+[ -f "$ZDOTDIR/bindings.zsh" ] && source "$ZDOTDIR/bindings.zsh"
+
+# fzf
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
 
 # zgen
 source "$XDG_DATA_HOME/zgen/zgen.zsh"
@@ -70,51 +82,11 @@ if ! zgen saved; then
 	zgen load rupa/z
 	zgen load zsh-users/zsh-autosuggestions
 	zgen load andrewferrier/fzf-z
+	zgen load zdharma/fast-syntax-highlighting
+	#zgen load jeffreytse/zsh-vi-mode
 
 	zgen save
 fi
-
-[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
-[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
-
-# Key bindings
-bindkey "\e[1~" beginning-of-line
-bindkey "\e[4~" end-of-line
-bindkey "\e[5~" beginning-of-history
-bindkey "\e[6~" end-of-history
-bindkey "\e[3~" delete-char
-bindkey "\e[2~" quoted-insert
-bindkey "\e[5C" forward-word
-bindkey "\eOc" emacs-forward-word
-bindkey "\e[5D" backward-word
-bindkey "\eOd" emacs-backward-word
-bindkey "\e\e[C" forward-word
-bindkey "\e\e[D" backward-word
-# for rxvt
-bindkey "\e[8~" end-of-line
-bindkey "\e[7~" beginning-of-line
-
-# # bindkey "^[[3;3~" delete-word # alt+del
-bindkey "^[[3;5~" kill-word # ctrl+del
-bindkey "^[[3^" kill-word # ctrl+del
-bindkey "^H" backward-kill-word # ctrl+backspace
-
-# Aliases
-alias tmux="tmux -2"
-
-alias tree="tree -I '.git|node_modules|.sass-cache' --dirsfirst -aC"
-
-alias halt="halt -p"
-
-alias gc="git commit -v"
-alias gs="git status"
-alias gd="git diff"
-alias ga="git add"
-
-alias wttr="curl wttr.in"
-
-alias emacs="emacs -nw"
-alias emacsx="emacs24-x"
 
 eval "`fnm env --use-on-cd`"
 eval "$(starship init zsh)"

@@ -32,6 +32,7 @@ export PATH="/snap/bin:$PATH"
 # Go
 export GOPATH="$XDG_DATA_HOME/go"
 export PATH="$GOPATH/bin:$PATH"
+export GVM_ROOT="$XDG_DATA_HOME/gvm"
 
 # Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"

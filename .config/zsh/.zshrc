@@ -90,3 +90,5 @@ fi
 
 eval "`fnm env --use-on-cd`"
 eval "$(starship init zsh)"
+
+[ -f "$GVM_ROOT/scripts/gvm-default" ] && source "$GVM_ROOT/scripts/gvm-default"

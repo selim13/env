@@ -9,6 +9,7 @@
    - ~/.local/bin
    - ~/.config
    - ~/.config/tmux
+   - ~/.config/nvim
    - ~/.config/git
    - ~/.config/shell
    - ~/.config/zsh
@@ -16,10 +17,12 @@
    - ~/.cache/zsh
 
 - link:
-    ~/.zshenv: .config/zsh/.zshenv
+    ~/.zshenv: .config/zsh/.zshenv # .zshenv should be both in $HOME and $HOME/.config/zsh
+    ~/.config/zsh/.zshenv: .config/zsh/.zshenv
     ~/.config/zsh/.zshrc: .config/zsh/.zshrc
     ~/.config/zsh/aliases.zsh: .config/zsh/aliases.zsh
     ~/.config/zsh/bindings.zsh: .config/zsh/bindings.zsh
+    ~/.config/nvim/init.vim: .config/nvim/init.vim
     ~/.config/wget/wgetrc: .config/wget/wgetrc
     "~/.config/konsolerc": konsole/konsolerc
     "~/.local/share/lscolors.sh": .local/share/lscolors.sh
@@ -36,3 +39,4 @@
 
 - shell:
   - sh -c '[ -d "$XDG_DATA_HOME/zgen" ] || git clone https://github.com/tarjoilija/zgen.git "$XDG_DATA_HOME/zgen"'
+  - sh -c '[ -d "${XDG_DATA_HOME:-$HOME/.local/share}/gvm/" ] || git clone https://github.com/moovweb/gvm.git "${XDG_DATA_HOME:-$HOME/.local/share}/gvm/"'

@@ -26,6 +26,10 @@ export GTK_IM_MODULE=xim # fixes ctrl-shift-e in vscode
 # Yarn
 export PATH="$HOME/.yarn/bin:$PATH"
 
+# PNPM
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"                                                                                                                                             
+export PATH="$PNPM_HOME:$PATH" 
+
 # Snap
 export PATH="/snap/bin:$PATH"
 

@@ -22,4 +22,4 @@ alias ga="git add"
 # other
 alias tree="tree -I '.git|node_modules|.sass-cache' --dirsfirst -aC"
 alias halt="halt -p"
-
+alias p="pnpm"

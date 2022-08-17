@@ -45,9 +45,6 @@ export PATH="$CARGO_HOME/.cargo/bin:$PATH"
 # RVM
 export PATH="$HOME/.rvm/bin:$PATH"
 
-# fnm
-export PATH="$HOME/.fnm:$PATH"
-
 # Deno
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -57,3 +54,4 @@ export LESSHISTFILE="-"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
+. "/home/selim13/.local/share/cargo/env"

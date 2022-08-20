@@ -92,3 +92,4 @@ eval "$(starship init zsh)"
 
 [ -f "$GVM_ROOT/scripts/gvm-default" ] && source "$GVM_ROOT/scripts/gvm-default"
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
+[ -f "$XDG_DATA_HOME/cargo/env" ] && source "$XDG_DATA_HOME/cargo/env"

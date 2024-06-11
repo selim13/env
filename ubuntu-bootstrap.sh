@@ -28,7 +28,8 @@ sudo apt install -y \
     mplayer \
     ffmpeg \
     inkscape \
-    gimp 
+    gimp \
+    xwallpaper
 
 # vscode
 # jetbrains toolbox/phpstorm
@@ -36,7 +37,7 @@ sudo apt install -y \
 # eagle https://www.autodesk.com/products/eagle/free-download
 
 mkdir -p ~/bin
-usermod -s /usr/bin/zsh selim13
+usermod -s /usr/bin/zsh $USER
 
 curl -o ~/bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr && chmod +x ~/bin/tldr
 
@@ -83,3 +84,24 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update
 sudo apt-get install spotify-client
+
+# Udev 
+curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/master/scripts/99-platformio-udev.rules | sudo tee /etc/udev/rules.d/99-platformio-udev.rules
+sudo usermod -a -G dialout $USER
+sudo usermod -a -G plugdev $USER
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+# .NET/mono for unity
+# https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install dotnet-sdk-3.0
+
+# https://www.mono-project.com/download/stable/
+sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update
+sudo apt install mono-complete

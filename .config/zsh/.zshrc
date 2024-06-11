@@ -63,8 +63,10 @@ zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-dir
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
 
-autoload -U compinit
+autoload -U compinit bashcompinit
 compinit
+bashcompinit
+
 # include hidden files
 _comp_options+=(globdots)
 
@@ -93,3 +95,5 @@ eval "$(starship init zsh)"
 [ -f "$GVM_ROOT/scripts/gvm-default" ] && source "$GVM_ROOT/scripts/gvm-default"
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
 [ -f "$XDG_DATA_HOME/cargo/env" ] && source "$XDG_DATA_HOME/cargo/env"
+[ -d "$XDG_DATA_HOME/asdf/" ] && source "$ASDF_DIR/asdf.sh" && source "$ASDF_DIR/completions/asdf.bash"
+[ -x "$(command -v pipenv)" ] && eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"

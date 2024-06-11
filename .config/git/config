@@ -1,16 +1,16 @@
 [user]
-	user = Dmitry Seleznyov
+	name = Dmitry Seleznyov
 	email = selim013@gmail.com
 [push]
 	default = simple
 [core]
 	excludesfile = ~/.config/git/ignore
-	pager = delta
-
+	# pager = delta
+	
 [delta]
 	syntax-theme = 1337
 	plus-color = "#012800"
 	minus-color = "#340001"
 
 [interactive]
-	diffFilter = delta --color-only
+	# diffFilter = delta --color-only

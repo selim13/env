@@ -30,6 +30,10 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"                                                                                                                                             
 export PATH="$PNPM_HOME:$PATH" 
 
+# ASDF
+export ASDF_DIR="$XDG_DATA_HOME/asdf"
+export ASDF_DATA_DIR="$ASDF_DIR"
+
 # Snap
 export PATH="/snap/bin:$PATH"
 
@@ -48,6 +52,10 @@ export PATH="$HOME/.rvm/bin:$PATH"
 # Deno
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# ccache
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
 
 # Other
 export LESSHISTFILE="-"
